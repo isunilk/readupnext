@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /404
+Allow: /
+
+Sitemap: https://www.readupnext.com/sitemap.xml
