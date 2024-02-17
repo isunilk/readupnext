@@ -91,7 +91,7 @@ const List = ({ data, errorCode }) => {
       },
       {
         "@type": "CollectionPage",
-        name: `${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2023)`,
+        name: `${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2024)`,
         description: `Check out the Best ${listBooks[0].category_name} Books - Picked based on recommendations from experts and fan around the world.`,
         // image: "[URL to the main image at the top]",
 
@@ -124,9 +124,9 @@ const List = ({ data, errorCode }) => {
     <>
       {/* <time datetime="2016-10-25" suppressHydrationWarning /> */}
       <Seo
-        pageTitle={`${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2023)`}
+        pageTitle={`${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2024)`}
         descr={similarCat ? similarCat.searchCategory[0].metaDescription : ""}
-        metaTitle={`${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2023)`}
+        metaTitle={`${listBooks ? listBooks.length : 0} Best ${listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2024)`}
         canonical={pathName}
         ogImage={similarCat.searchCategory[0].imgArr[0]?similarCat.searchCategory[0].imgArr[0]:"https://www.readupnext.com/opengraph_image.png"}
       />
@@ -172,7 +172,7 @@ const List = ({ data, errorCode }) => {
             <div className="col-sm-6 col-10 books-hero-secondDiv">
               <div className="text-wrapper" data-aos="fade-right">
                 <h1 className="fs-2 text-center text-sm-start fw-500 tx-new">
-                  {listBooks ? listBooks.length : 0} Best {listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2023).
+                  {listBooks ? listBooks.length : 0} Best {listBooks[0] ? listBooks[0].category_name : "category"} Books Of All Time (Updated 2024).
                 </h1>
                 <p className='text-center text-md-start'>Check out the Best {listBooks[0] ? listBooks[0].category_name : "category"} Books - Picked based on recommendations from experts and fan around the world.</p>
               </div>
