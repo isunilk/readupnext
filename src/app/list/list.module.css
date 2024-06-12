@@ -1,0 +1,145 @@
+/* ==================main page css=============== */
+.list_menu{
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: scroll;
+    direction: rtl;
+}
+.list_menu ul{
+    background: var(--bglight);
+    /* height: 100vh; */
+}
+
+.list_menu::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+.list_menu::-webkit-scrollbar-thumb{
+    width: 5px;
+    background-color: var(--dark);
+}
+.list_menu button{
+    background: transparent;
+    border-radius: 50px;
+}
+
+/* ==================list card ================== */
+.listCard{
+    background-color: var(--bglight);
+    border: 1px solid var(--transblack)
+}
+
+.listCard:hover{
+    border-color: var(--dark);
+}
+.listCard:hover .list_card_arrow{
+    background-color: var(--dark);
+    /* color: var(--light); */
+}
+
+.list_card_arrow{
+    font-size: 2rem;
+    background: var(--transblack);
+    color: var(--light);
+    width: 95px;
+    padding: 0rem 2rem 2rem 0rem;
+    height: 95px;
+    bottom: -3.65rem;
+    right: -3rem;
+    border-radius: 50px;
+}
+
+.listCard img{
+    width: 35%;
+    height: 100%;
+}
+
+
+
+/* ==================Internal List CSS ================ */
+
+.list_banner {
+    gap: 7rem;
+    margin-bottom: -4rem;
+}
+
+.list_banner img {
+    width: 200px;
+    height: 300px;
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid var(--dark);
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.35);
+}
+
+.list_banner .main_img {
+    width: 230px;
+    height: 340px;
+    position: absolute;
+
+}
+
+.list_details {
+    padding: 8rem 5rem 2rem 5rem;
+    background: var(--bglight);
+    font-family: var(--font-urb);
+}
+
+.list_details h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.list_details button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--basecolor);
+    border-radius: 50px;
+}
+
+
+
+.subtitle{
+    font-family: var(--font-urb);
+    font-size: 25px;
+}
+
+@media (max-width:767px) {
+    .list_details {
+        padding: 8rem 2rem 2rem 2rem;
+    }
+}
+
+@media (max-width:576px) {
+    .list_banner {
+        gap: 3rem;
+    }
+    .list_details h1 {
+        font-size: 1.5rem;
+    }
+    .list_details p {
+        font-size: 14px;
+    }
+
+    .list_banner img {
+        width: 35vw;
+    }
+
+    .list_banner .main_img {
+        width: 40vw;
+    }
+    .list_details {
+        padding: 8rem 1rem 2rem 1rem;
+    }
+}
+@media (max-width:400px) {
+    .list_details h1 {
+        font-size: 1.3rem;
+    }
+    .list_details {
+        padding: 6rem 1rem 2rem 1rem;
+    }
+    .list_details p {
+        font-size: 12px;
+    }
+}

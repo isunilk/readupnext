@@ -1,0 +1,147 @@
+.top_div{
+    margin-bottom: -5rem;
+    font-family: var(--font-urb);
+}
+
+.top_div img{
+    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.4);
+    border: solid 2px var(--dark);
+    border-radius: 0px 10px 10px 0;
+    width: 30vw;
+}
+
+.top_div h1{
+    font-size: 2rem;
+    /* font-weight: 600; */
+}
+.action_con1 a{
+    color: var(--light);
+    background: var(--dark);
+    text-decoration: none;
+    padding: 7px 5px;
+    width: 170px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.top_div .action{
+    border-bottom: 1px solid var(--basecolor);
+    margin-bottom: -3.5rem;
+}
+.action_con2 button{
+    background: var(--basecolor);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.bottom_div{
+    padding: 6rem 2rem 2rem 2rem;
+    background-color: var(--bglight);
+    font-family: var(--font-urb);
+}
+
+.bottom_div h3{
+    font-size: 18px;
+}
+.bottom_div p{
+    opacity: .8;
+}
+.recomdiv img,.recomdiv span{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: -5px;
+}
+.recomdiv span{
+    background-color: var(--light);
+}
+
+
+
+
+.subtitle{
+    font-family: var(--font-urb);
+    font-size: 25px;
+}
+
+
+@media (max-width:991px) {
+    .top_div img{
+        width: 40%;
+    }
+    .action_con1 a{
+        width: 140px;
+    }
+}
+
+@media (max-width:767px) {
+    .top_div{
+        align-items: center;
+    }
+    .top_div h1{
+        font-size: 1.5rem;
+    }
+    .top_div p{
+        font-size: 12px;
+    }
+
+    .action_con2{
+        top: 20px;
+        right: 20px;
+        position: absolute;
+    }
+
+    .top_div img{
+        margin-bottom: -5rem;
+        z-index: 2;
+    }
+
+    .titlediv{
+        padding:6.5rem 1rem 0rem 1rem;
+        background-color: var(--bglight);
+    }
+    .bottom_div p{
+        font-size: 12px;
+    }
+    .top_div .action{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:575px) {
+    .top_div{
+        margin-bottom: 0;
+    }
+    .top_div img{
+        margin-bottom: -3rem;
+    }
+    .bottom_div{
+        margin: 0;
+        padding: 1rem;
+    }
+    .top_div h1, .bottom_div h3{
+        font-size: 16px;
+    }
+    .titlediv{
+        padding: 4rem 0 0 0;
+    }
+
+    .action_con1 a{
+        font-size: 10px;
+        width: 102px;
+    }
+    .action_con2{
+        top: 10px;
+        right: 10px;
+    }
+
+    .action_con2 button{
+        width: 25px;
+        height: 25px;
+    }
+    .action_con2 button svg{
+        width: 15px;
+        height: 15px;
+    }
+}

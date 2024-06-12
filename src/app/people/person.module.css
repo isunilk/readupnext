@@ -1,0 +1,111 @@
+.top_div{
+    margin-bottom: -5rem;
+    font-family: var(--font-urb);
+}
+
+
+.top_div img{
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.35);
+}
+
+.top_div h1{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.action_con1 svg{
+    width: 25px;
+    height: 25px;
+}
+
+.top_div .action{
+    border-bottom: 1px solid var(--basecolor);
+    margin-bottom: -2rem;
+}
+ .action_con2 button{
+    background: var(--basecolor);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.bottom_div{
+    padding: 9rem 2rem 2rem 2rem;
+    background-color: var(--bglight);
+    font-family: var(--font-urb);
+}   
+
+
+.subtitle{
+    font-family: var(--font-urb);
+    font-size: 25px;
+}
+
+
+/* =============menu css */
+.list_menu{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: scroll;
+    direction: rtl;
+}
+.list_menu ul{
+    background: var(--bglight);
+    /* height: 100vh; */
+}
+
+.list_menu::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+.list_menu::-webkit-scrollbar-thumb{
+    width: 5px;
+    background-color: var(--dark);
+}
+.list_menu button{
+    background: transparent;
+    border-radius: 50px;
+}
+
+@media (max-width:767px) {
+    .top_div{
+        margin-bottom: 0;
+        align-items: center;
+    }
+    .top_div img{
+        margin-bottom: -4rem;
+        z-index: 3;
+    }
+    .title_div{
+        background-color: var(--bglight);
+        padding-top: 5rem;
+        width: 100%;
+    }
+    .bottom_div{
+        padding: 0rem 2rem 2rem 2rem;
+    }
+}
+
+@media (max-width:400px) {
+    .top_div img{
+        width: 122px;
+    }
+    .title_div h1{
+        font-size: 18px;
+    }
+    .title_div p, .bottom_div p{
+        font-size: 12px;
+    }
+    .action_con1 svg, .action_con2 button svg{
+        width: 16px;
+        height: 16px;
+    }
+    .action_con2 button{
+        width: 30px;
+        height: 30px;
+    }
+    .bottom_div{
+        padding: 0rem 1rem 1rem 1rem;
+    }
+}

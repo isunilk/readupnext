@@ -1,0 +1,156 @@
+.personCard {
+    border: .5px solid var(--dark);
+    padding: 14px 10px;
+    width: 188px;
+    border-radius: 20px;
+    font-family: var(--font-urb);
+    background-color: var(--basecolor);
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.personCard img{
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
+.personCard a {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--dark);
+    font-weight: 600;
+}
+.personCard p{
+    font-size: 12px;
+    font-style: italic;
+}
+.personCard div span{
+    font-size: 10px;
+    padding: 3px 5px ;
+    border-radius: 5px;
+    /* background: var(--gray); */
+}
+.personCard div span.author{
+    background: orange;
+}
+.personCard div span.layer{
+    color: var(--light);
+    background-color: darkgreen;
+}
+
+/* =============More Peoples Link ===================== */
+.moreLink{
+    width: 230px;
+    height: 200px;
+    font-size: 25px;
+    background-color: var(--yellow);
+    color: var(--dark);
+    font-family: var(--font-urb);
+    border-radius: 10px;
+    position: relative;
+}
+.moreLink::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    transition: 0.2s ease-in;
+}
+.moreLink:hover::after{
+    left: 0;
+    top: 0;
+}
+
+
+
+
+
+
+/* =============== Book Card CSS=================== */
+.book_container .main_img{
+    width: 147px;
+    height: 100%;
+    box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--dark);
+    border-radius: 0 5px 5px 0;
+}
+.book_left{
+    font-family: var(--font-urb);
+}
+
+.book_left h3{
+    font-size: 20px;
+}
+.book_left img,.recom_tab img{
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--dark);
+}
+
+.book_right p {
+    font-size: 14px;
+}
+.recom_tab{
+    border: 1px solid var(--dark);
+    border-radius: 15px;
+    font-size: 12px;
+}
+.recom_tab button{
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+.recom_tab img:not(:first-child){
+    margin-left: -7px;
+}
+.recom_tab span{
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    border-radius: 50px;
+    border: 1px solid var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light);
+    margin-left: -7px;
+}
+
+
+/* ================Faq CSS ============================================ */
+.faq{
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    font-family: var(--font-urb);
+}
+.faq p{
+    opacity: .8;
+    transition: .2s ease;
+}
+
+/* =========Common Hero Section Css ================================= */
+.common_hero{
+    font-family: var(--font-urb);
+}
+
+
+
+
+
+
+@media (max-width:575px) {
+    .book_container .main_img{
+        height: fit-content;
+    }
+    
+}
+@media (max-width:400px) {
+    .book_left{
+        font-size: 12px;
+    }
+    .book_left h3{
+        font-size: 16px;
+    }
+}

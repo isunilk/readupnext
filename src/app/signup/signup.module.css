@@ -1,0 +1,40 @@
+.sign_cont>a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.center_div{
+    width: 50%;
+    background-color: var(--bglight);
+    max-width: 600px;
+}
+
+.center_div label{
+    color: var(--gray);
+    padding-bottom: .2rem;
+}
+
+.center_div input{
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--dark);
+    border-radius: 7px;
+    padding: 1rem;
+}
+
+@media (max-width:767px) {
+    .center_div{
+        width: 70%;
+    }
+}
+@media (max-width:575px) {
+    .center_div{
+        width: 90%;
+    }
+}  
+@media (max-width:400px) {
+    .center_div{
+        width: 95%;
+    }
+}  
