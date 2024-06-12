@@ -10,7 +10,7 @@ const page = () => {
             <div className={'position-absolute top-50 start-50 translate-middle px-5 py-4 ' + style.center_div}>
                 <h1 className='text-center fw-semibold'>Sign Up</h1>
                 <Client/>
-                <p className='text-center mt-2'>If you have alredy account please- <Link href="/login" >LogIn</Link></p>
+                <p className='text-center mt-2'>If you have alredy account please- <Link href="/login" >Login</Link></p>
             </div>
             <img src="/assets/bg/ils_11.png" className='position-absolute end-0 bottom-0'style={{zIndex:"-1"}} alt="" />
             <img src="/assets/bg/ils_12.png" className='position-absolute start-0 bottom-0'style={{zIndex:"-1"}} alt="" />

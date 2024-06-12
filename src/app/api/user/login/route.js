@@ -24,7 +24,7 @@ export async function POST(request,{params}) {
 
         
 
-        return Response.json({success:true, message:"LogIn Successfully"})
+        return Response.json({success:true, message:"Login Successfully"})
 
     }catch(err){
         console.log(err)
