@@ -39,7 +39,7 @@ export const Navbar = async() => {
           </div>
           :<div className="col-lg-4 col-md-4 justify-md-content-end justify-content-center justify-content-lg-start mt-3 mt-md-0 pt-4 pt-md-0 d-flex gap-5 gap-lg-3 gap-md-1">
           <Link href="/login" className="text-decoration-none text-dark text-center border rounded-pill border-dark bg-white px-lg-3  px-3 px-md-2 py-1">Login</Link>
-          <Link href="/signup" className="text-decoration-none text-white bg-dark text-center border rounded-pill border-dark px-lg-3 px-3  px-md-2 py-1">SignUp</Link>
+          <Link href="/signup" className="text-decoration-none text-white bg-dark text-center border rounded-pill border-dark px-lg-3 px-3  px-md-2 py-1">Sign Up</Link>
         </div>
         }
       </div>

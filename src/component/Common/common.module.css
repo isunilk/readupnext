@@ -1,8 +1,8 @@
 .personCard {
     border: .5px solid var(--dark);
-    padding: 14px 10px;
-    width: 188px;
-    border-radius: 20px;
+    padding: 10px 10px;
+    width: 180px;
+    border-radius: 10px;
     font-family: var(--font-urb);
     background-color: var(--basecolor);
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -12,10 +12,10 @@
     border-radius: 5px;
 }
 .personCard a {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
     color: var(--dark);
-    font-weight: 600;
+    font-weight: 400;
 }
 .personCard p{
     font-size: 12px;
@@ -91,6 +91,8 @@
 
 .book_right p {
     font-size: 14px;
+    font-family: var(--font-urb);
+    font-weight: 400;
 }
 .recom_tab{
     border: 1px solid var(--dark);
@@ -100,7 +102,9 @@
 .recom_tab button{
     border-radius: 10px;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
+    font-family: var(--font-urb);
+    font-weight: 400
 }
 .recom_tab img:not(:first-child){
     margin-left: -7px;

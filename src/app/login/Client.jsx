@@ -53,7 +53,7 @@ export const Client = () => {
                 <Link href="" className="text-dark text-decoration-none border-0 bg-transparent fw-">Forgot Password</Link>
             </div>
             <div className='mt-5 d-flex justify-content-center'>
-                <button type='submit' className='yellow_button  border-0'>LogIn</button>
+                <button type='submit' className='yellow_button  border-0'>Login</button>
             </div>
         </form>
     )
