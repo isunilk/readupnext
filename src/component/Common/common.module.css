@@ -19,16 +19,16 @@
 }
 .personCard p{
     font-size: 12px;
-    font-style: italic;
+    font-style: normal;
 }
 .personCard div span{
-    font-size: 10px;
+    font-size: 12px;
     padding: 3px 5px ;
     border-radius: 5px;
     /* background: var(--gray); */
 }
 .personCard div span.author{
-    background: orange;
+    background: #c5b3da;
 }
 .personCard div span.layer{
     color: var(--light);
