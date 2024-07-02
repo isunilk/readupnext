@@ -133,7 +133,7 @@ export const recommend_search = async (search) => {
     }
 }
 
-const myCache = new cache({ stdTTL: 15 });
+const myCache = new cache({ stdTTL: 2592000 });
 
 export const setCache = async (req, data) => {
     myCache.set(await cacheName(req), data);
