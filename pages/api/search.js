@@ -9,6 +9,7 @@ import seriesAuthors from "../../models/series_authorsSchema";
 
 export default async function handler(req, res) {
     try {
+        
         await dbConnect();
         let target = req.body.searchInput;
 

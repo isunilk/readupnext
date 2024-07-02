@@ -1,6 +1,7 @@
 import bookSchema from "../../models/bookSchema";
 import dbConnect from "../../utils/dbCon";
 import listSchema from "../../models/listSchema";
+import { setCache, getCache, giveCacheData } from "./controler/controler"
 
 async function similarCategory(query) {
     let searchQuery = query.replace(/-/g, " ")
@@ -17,8 +18,8 @@ async function similarCategory(query) {
                 $sample: { size: 3 }
             }
         ])
-        return {similarCategory, searchCategory}
-    }else{
+        return { similarCategory, searchCategory }
+    } else {
         return false
     }
 
@@ -27,36 +28,40 @@ async function similarCategory(query) {
 
 export default async function handler(req, res) {
     try {
-        await dbConnect();
-        let category = req.query.category.trim().split('-')
-        category.shift();
-        category.pop()
+        if (await getCache(req)) {
+            return res.status(200).send(await giveCacheData(req))
+        } else {
+            await dbConnect();
+            let category = req.query.category.trim().split('-')
+            category.shift();
+            category.pop()
 
-        let str = ''
-        category.forEach(elem => {
-            str += elem + " ";
-        })
-        str = str.substring(0, str.length - 1)
+            let str = ''
+            category.forEach(elem => {
+                str += elem + " ";
+            })
+            str = str.substring(0, str.length - 1)
 
-        let regex = new RegExp('^' + str + '$', 'i')
+            let regex = new RegExp('^' + str + '$', 'i')
 
-        const getData = await bookSchema.find({ category_name: regex });
+            const getData = await bookSchema.find({ category_name: regex });
 
-        if (getData.length <= 0) {
-            res.status(404).send({ statusCode: 404, message: "Data not found" })
-        }
-        else {
-
-            let similarCategories = await similarCategory(req.query.category);
-
-            if(!similarCategories){
+            if (getData.length <= 0) {
                 res.status(404).send({ statusCode: 404, message: "Data not found" })
-            }else{
-                res.send({ similarCategories, getData })
             }
+            else {
+
+                let similarCategories = await similarCategory(req.query.category);
+
+                if (!similarCategories) {
+                    res.status(404).send({ statusCode: 404, message: "Data not found" })
+                } else {
+                    await setCache(req, { similarCategories, getData })
+                    res.send({ similarCategories, getData })
+                }
+            }
+
         }
-
-
     } catch (err) {
         console.log(err)
     }
