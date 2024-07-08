@@ -127,7 +127,7 @@ export const recommend_search = async (search) => {
         if (!data) {
             return false;
         }
-        return [data, otherPeople];
+        return [data._doc, otherPeople];
     } catch (err) {
         console.log(err)
     }
