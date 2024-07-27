@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Header1 from "../../components/header/Header1";
-import cookies from "next-cookies";
 
 const index = () => {
   return (
@@ -31,31 +30,5 @@ const index = () => {
     </>
   );
 };
-
-export async function getStaticProps(context) {
-  const { art_ad: token } = cookies(context);
-
-  let user = await fetch(`${process.env.NEXT_API_URL}/api/authenticat`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
-  if (!user.ok) {
-    return {
-      redirect: {
-        destination: "/adminlogin",
-        permanent: false,
-      },
-    };
-  } else {
-    return {
-      props: {},
-      revalidate: 60, // Regenerate the page every 60 seconds
-    };
-  }
-}
 
 export default index;
