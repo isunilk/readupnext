@@ -350,7 +350,7 @@ export async function getStaticProps({ params }) {
   const errorCode = resData.ok ? false : resData.status;
   return {
     props: { data, errorCode },
-    revalidate: 60,
+    revalidate: 1728000,
   };
 }
 
