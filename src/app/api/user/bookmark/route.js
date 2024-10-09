@@ -12,7 +12,7 @@ export async function POST(request, { params }) {
     const verifyToken = jwt.verify(cookie.value, process.env.SECRET_KEY)
     let data = await request.json()
     // const varify = await User.findOne({ _id: verifyToken._id, "tokens.token": value })
-    console.log(data)
+    // console.log(data)
     switch (data.page) {
         case "people":
             let exist = await User.findOne({_id:verifyToken._id ,"bookmarks.people.slug":data.data.slug})

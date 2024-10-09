@@ -11,7 +11,7 @@ export const Client = () => {
         try{
             let res = await fetch(`/api/fetch-data/author?page=${page.current}`)
             res = await res.json();
-            console.log(res)
+            // console.log(res)
             setStore([...store, ...res.data])
             page.current = page.current + 1
         }catch(err){

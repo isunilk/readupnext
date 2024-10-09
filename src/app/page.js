@@ -9,7 +9,7 @@ import Link from "next/link";
 import BookFilter from "@/component/Home/BookFilter";
 import { Footer } from "@/component/Footer/Footer";
 import { AuthorCard, MorePerson } from "@/component/Common/Person";
-import { home_author } from "./api/fetch-data/[action]/action";
+import { home_author, home_people } from "./api/fetch-data/[action]/action";
 import dbConnect from "../../utils/connection";
 // import { BookDetail } from "@/component/Common/BookDetail";
 
@@ -17,6 +17,8 @@ export default async function Home() {
   await dbConnect()
   let data = await home_author()
   // console.log(data.metadata)
+
+
   return (
     <>
       <Navhome />

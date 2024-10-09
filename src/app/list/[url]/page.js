@@ -12,7 +12,7 @@ const page = async ({ params }) => {
     await dbConnect();
     let data = await listInternal(params.url)
     let list = data.similarCategories.searchCategory
-    console.log(data.getData)
+    // console.log(data.getData)
     return (
         <>
             <Navbar />

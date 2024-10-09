@@ -42,7 +42,7 @@ export const Navsearch = () => {
         setTimeout(() => {
             // let searchValue = e?e.value:null;
             let searchValue = e ? e.value : null;
-            console.log(searchValue)
+            // console.log(searchValue)
             if (y === false && searchValue) {
                 z = 0;
                 search(searchValue, "search");

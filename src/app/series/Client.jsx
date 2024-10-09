@@ -13,7 +13,7 @@ export const Client = () => {
         try {
             let res = await fetch(`/api/fetch-data/series?page=${page.current}`)
             res = await res.json();
-            console.log(res)
+            // console.log(res)
             setStor([...store, ...res.data])
             page.current = page.current + 1
         } catch (err) {

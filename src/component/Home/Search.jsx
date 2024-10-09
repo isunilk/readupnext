@@ -42,7 +42,7 @@ export const Search = () => {
         setTimeout(() => {
             // let searchValue = e?e.value:null;
             let searchValue = e ? e.value : null;
-            console.log(searchValue)
+            // console.log(searchValue)
             if (y === false && searchValue) {
                 z = 0;
                 search(searchValue, "search");
@@ -81,7 +81,7 @@ export const Search = () => {
             </button>
             {searchResulte ?
                 <div className={`position-absolute  ${style.searchResulte}`}>
-                    {console.log(searchResulte)}
+                    {/* {console.log(searchResulte)} */}
                     <ul className='ps-0' style={{ maxHeight: "230px", overflowY: "auto" }}>
                         {searchResulte.books ? searchResulte.books.length > 0 ?
                             <>

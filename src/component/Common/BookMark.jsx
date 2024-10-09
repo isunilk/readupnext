@@ -6,7 +6,7 @@ export const BookMark = ({ data, page }) => {
     const [add, setAdd] = useState(false)
 
     let book_mark = async () => {
-        console.log("fsys", data)
+        // console.log("fsys", data)
         let book = await fetch("/api/user/bookmark",{
             method:"POST",
             headers:{
@@ -18,7 +18,7 @@ export const BookMark = ({ data, page }) => {
             })
         })
         book = await book.json()
-        console.log(book)
+        // console.log(book)
         setAdd(true)
     }
     return (

@@ -14,7 +14,7 @@ export const Client = () => {
     const get_list = async () => {
         let res = await fetch(`/api/fetch-data/list-name`)
         res = await res.json();
-        console.log(res.data)
+        // console.log(res.data)
         setList(res.data);
     }
 
@@ -23,7 +23,7 @@ export const Client = () => {
             if (stop.current) return;
             let res = await fetch(`/api/fetch-data/list?page=${page.current}`)
             res = await res.json();
-            console.log(res)
+            // console.log(res)
             page.current === 0 ? setStor(res.data) : setStor([...store, ...res.data])
             page.current = page.current + 1
         } catch (err) {

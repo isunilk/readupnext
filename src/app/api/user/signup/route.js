@@ -12,7 +12,7 @@ export async function POST(request, { params }) {
         if (exist) return Response.json({ success: false, message: "All Field Required" })
         let doc = new User({ user, email, password })
         await doc.save()
-        console.log(doc)
+        // console.log(doc)
 
         return Response.json({ success: true, message: "Account Created Successfully" })
 
