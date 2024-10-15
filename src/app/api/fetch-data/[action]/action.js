@@ -275,29 +275,32 @@ export const authorInternal = async (slug) => {
 }
 
 export const books = async (slug) => {
-    let data = await bookSchema.findOne({ slug: slug });
-    let similarBooks;
-    if (data) {
-        similarBooks = await bookSchema.find({ category_name: data.category_name });
-        return { data, similarBooks }
+    const keyName = slug + "books"
+    if (await getCache(keyName)) {
+        return await giveCacheData(keyName)
     } else {
-        data = await seriesSchema.findOne({ slug: slug });
+        let data = await bookSchema.findOne({ slug: slug });
+        let similarBooks;
         if (data) {
-
-            similarBooks = await seriesSchema.find({ series_slug: data.series_slug });
+            similarBooks = await bookSchema.find({ category_name: data.category_name });
+            await setCache(keyName, { data, similarBooks })
             return { data, similarBooks }
-        }
-        else {
-
-            data = await SeriesAuthorBooks.findOne({ slug: slug });
-
-            if (!data) {
-                return { statusCode: 404, message: "Data not found" };
-
-            } else {
-
-                similarBooks = await SeriesAuthorBooks.find({ series_slug: data.series_slug })
+        } else {
+            data = await seriesSchema.findOne({ slug: slug });
+            if (data) {
+                similarBooks = await seriesSchema.find({ series_slug: data.series_slug });
+                await setCache(keyName, { data, similarBooks })
                 return { data, similarBooks }
+            }
+            else {
+                data = await SeriesAuthorBooks.findOne({ slug: slug });
+                if (!data) {
+                    return { statusCode: 404, message: "Data not found" };
+                } else {
+                    similarBooks = await SeriesAuthorBooks.find({ series_slug: data.series_slug })
+                    await setCache(keyName, { data, similarBooks })
+                    return { data, similarBooks }
+                }
             }
         }
     }
