@@ -1,0 +1,11 @@
+/* Default image for larger screens */
+.responsive_image {
+    content: url('/advertising/desktop_b1.png');
+}
+
+/* Mobile image for screens smaller than or equal to 425px */
+@media (max-width: 425px) {
+    .responsive_image {
+        content: url('/advertising/mobile_b1.png');
+    }
+}

@@ -5,6 +5,7 @@ import "../styles/index.scss";
 import ScrollToTop from "../components/common/ScrollTop";
 import { SearchPhone } from "../components/common/SearchPhone";
 import SeoScript from "../components/common/Seoscript";
+import ImageModal from "../components/advertising/ImageModal";
 
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
     <div className="main-page-wrapper">
       <SeoScript/>
       <SearchPhone/>
+      <ImageModal />
       <Component {...pageProps} />
       <ScrollToTop />
     </div>
