@@ -303,7 +303,7 @@ export async function getStaticProps({ params }) {
       data,
       errorCode,
     },
-    revalidate: 1728000, // Revalidate at most once every 60 seconds
+    revalidate: 15552000, // Revalidate at most once every 6 months
   };
 }
 
