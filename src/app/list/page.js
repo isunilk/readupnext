@@ -1,20 +1,39 @@
 // import { BookDetail } from "@/component/Common/BookDetail"
 // import { Navhome } from "@/component/Navbar/Navhome"
-import style from "./list.module.css"
 import { Navbar } from "@/component/Navbar/Navbar"
 import { Footer } from "@/component/Footer/Footer"
 import { Hero } from "@/component/Common/Hero"
-import Link from "next/link"
 import { Client } from "./Client"
+import { Seo } from "@/component/Common/Seo"
 
 const content = {
   heading: "Best Books List Across 1300 Categories (Our TopPicks)",
   para: "Explore our 'Best Books List', curated by scanning the web and sourcing expert recommendations. With 1300+ categories, find top picks from music to engineering and more. Your next great read awaits."
 }
 
+export const dynamic = 'force-static'
+
+export const metadata = {
+  title:"Best Books List Across 1300 Categories (Our Top Picks)",
+  description:"Dive into our 'Best Books List' section with over 1300 categories. Discover top picks from music to engineering, psychology, and self-help.",
+  alternates: {
+    canonical: '/list',
+  },
+  openGraph: {
+    images: '/opengraph_image.png',
+  },
+}
+
 const page = () => {
   return (
     <>
+      <Seo
+        pageTitle="Best Books List Across 1300 Categories (Our Top Picks)"
+        descr="Dive into our 'Best Books List' section with over 1300 categories. Discover top picks from music to engineering, psychology, and self-help."
+        metaTitle="Best Books List Across 1300 Categories (Our Top Picks)"
+        canonical="https://www.readupnext.com/list"
+        ogImage="https://www.readupnext.com/opengraph_image.png"
+      />
       <Navbar />
       <Hero heading={content.heading} para={content.para} />
       <section className="container d-flex gap-3">
@@ -160,7 +179,7 @@ const page = () => {
             </div>
           </Link>
         </div> */}
-        <Client/>
+        <Client />
       </section>
       <Footer />
 

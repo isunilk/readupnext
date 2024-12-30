@@ -11,13 +11,13 @@ export const BookDetailPerson = ({ book, person }) => {
     <>
       <div className={"d-flex my-4 flex-wrap " + style.book_container}>
         <div className="col-lg-8 d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
+          <a href={book.buyLink || "/"} target="_blank" rel="nofollow">
           <img src={book.imageUrl} alt="" className={"col-4 " + style.main_img} />
+          </a>
           <div className={"px-sm-3  d-flex flex-column d-sm-block align-items-center " + style.book_left}>
             <h3 className="text-center text-sm-start pt-3 pt-sm-0">{book.title}</h3>
             <div className="d-flex gap-1 gap-sm-3 align-items-center">
               <span className="opacity-75">{book.subtitle}</span>
-
-
             </div>
             <div className="my-2">
               <span className="opacity-50 text-dark">Author: </span>
@@ -36,7 +36,7 @@ export const BookDetailPerson = ({ book, person }) => {
             </div>
             <p className="text-center text-sm-start">{book.quote} [<Link target="_blank" className="text-decoration-none fst-italic" href={book.source}>Source</Link>]</p>
             <div className="d-flex gap-3">
-              <Link href="#" className="yellow_button text-decoration-none">View on Amazon</Link>
+              <Link href={book.buyLink||"#"}className="yellow_button text-decoration-none">View on Amazon</Link>
               <Link href={"/book/" + book.slug} className="black_button  text-decoration-none">View Details</Link>
             </div>
           </div>
@@ -44,10 +44,10 @@ export const BookDetailPerson = ({ book, person }) => {
         <div className={"col-lg-4 col-12 mt-3 mt-lg-0 " + style.book_right}>
 
           <RightTab recom={book.expertRecommenders} list={book.articals||[]}/>
-          <div className="mt-3">
+          {book.whyread &&<div className="mt-3">
             <h4 className="fs-6 text-dark fw-semibold">Why should you read it? </h4>
             <p className="mb-0">"About a number of the ways that people are intervening with nature, including gene drive and geo engineering." - Bill Gates <Link href="#" className="text-decoration-none">[Sorce]</Link></p>
-          </div>
+          </div>}
         </div>
       </div>
     </>
@@ -61,12 +61,14 @@ export const BookDetail = ({ book, person }) => {
     <>
       <div className={"d-flex my-4 flex-wrap " + style.book_container}>
         <div className="col-lg-8 d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
+          <a href={book.buyLink || "/"} target="_blank" rel="nofollow" style={{height:"100%"}}>
           <img src={book.BookimageUrl} alt="" className={"col-4 " + style.main_img} />
+          </a>
           <div className={"px-sm-3  d-flex flex-column d-sm-block align-items-center " + style.book_left}>
             <h3 className="text-center text-sm-start pt-3 pt-sm-0">{book.title}</h3>
             <div className="d-flex gap-1 gap-sm-3 align-items-center">
-              <span className="opacity-75">{book.subtitle}</span>
-              <span className="opacity-75 d-none d-sm-block">|</span>
+              {book.subtitle&&<><span className="opacity-75">{book.subtitle}</span>
+              <span className="opacity-75 d-none d-sm-block">|</span></>}
               <div className="course-review d-flex align-items-center justify-content-center">
                 <ul className="list-unstyled mb-0 d-flex">
                   {Array.from({ length: Math.ceil(book.rating) }, (_, i) => (
@@ -104,19 +106,21 @@ export const BookDetail = ({ book, person }) => {
               <img src={person.img} width="50px" alt="" />
               <span className="fst-italic ps-1">{person.name}</span>
             </div> */}
-            <p className="text-center text-sm-start mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ipsum aliquid distinctio autem perferendis iusto commodi voluptatibus ullam esse deleniti praesentium dolorum dolor, ab maiores veritatis explicabo vitae. </p>
+            <p className={style.sort_desc+" text-center text-sm-start mt-3"}>{book.product_description}</p>
             <div className="d-flex gap-3">
-              <Link href="#" className="yellow_button text-decoration-none">View on Amazon</Link>
+              <Link href={book.buyLink || "/"} target="_blank" rel="nofollow" className="yellow_button text-decoration-none">View on Amazon</Link>
               <Link href={"/book/" + book.slug} className="black_button  text-decoration-none">View Details</Link>
             </div>
           </div>
         </div>
         <div className={"col-lg-4 col-12 mt-3 mt-lg-0 " + style.book_right}>
-          <RightTab list={book.articles||[]} recom={book.expertRecommenders||[]} openDefault={true}/>
-          <div className="mt-3">
+          <RightTab list={book.articles||[]} recom={book.expertRecommenders} openDefault={true}/>
+          {book.whyread && <div className="mt-3">
             <h4 className="fs-6 text-dark fw-semibold">Why should you read it? </h4>
-            <p className="mb-0">"About a number of the ways that people are intervening with nature, ." - Bill Gates <Link href="#" className="text-decoration-none">[Sorce]</Link></p>
-          </div>
+            <p className="mb-0">{book.whyread}
+              {/* <Link href="#" className="text-decoration-none">[Sorce]</Link> */}
+              </p>
+          </div>}
         </div>
       </div>
     </>

@@ -107,16 +107,6 @@ export const ClientComp = () => {
                 </div>
 
             </InfiniteScroll>
-            {/* <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person /> */}
-
         </section>
     )
 }

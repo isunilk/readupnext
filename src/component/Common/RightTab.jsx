@@ -9,21 +9,23 @@ export const RightTab = ({ list, recom, openDefault }) => {
     return (
         <div className={style.recom_tab}>
             <div className="p-2 d-flex justify-content-lg-between justify-content-around border-bottom border-dark">
-                <button className="bg-transparent px-xl-3 px-lg-2 px-sm-3 px-2 py-2" style={{ border:!show?"1px solid rgba(0, 0, 0, 0.2)":"none" }} onClick={()=>setShow(false)}>Recommended By</button>
-                <button className="bg-transparent px-xl-3 px-lg-2 px-sm-3 px-2 py-2"style={{ border:show?"1px solid rgba(0, 0, 0, 0.2)":"none" }} onClick={()=>setShow(true)}>Featured in Articles</button>
+                <button className="bg-transparent px-xl-3 px-lg-2 px-sm-3 px-2 py-2" style={{ border: !show ? "1px solid rgba(0, 0, 0, 0.2)" : "none" }} onClick={() => setShow(false)}>Recommended By</button>
+                <button className="bg-transparent px-xl-3 px-lg-2 px-sm-3 px-2 py-2" style={{ border: show ? "1px solid rgba(0, 0, 0, 0.2)" : "none" }} onClick={() => setShow(true)}>Featured in Articles</button>
             </div>
-            <div className="p-3" style={{display:show?"none":"block"}}>
-                {/* <div className="d-flex"> */}
-                <img src="/modalbook.png" alt="" />
-                <img src="/modalbook.png" alt="" />
-                <img src="/modalbook.png" alt="" />
-                <span>54+</span>&nbsp;&nbsp;
-                Recommended by {recom.map((item, index) => (
-                    index === recom.length - 1 ? item.name + " " : item.name + ", "
-                ))}
+            <div className="p-3" style={{ display: show ? "none" : "block" }}>
+                {recom.length > 0 ? <>
+                    <img src="/modalbook.png" alt="" />
+                    <img src="/modalbook.png" alt="" />
+                    <img src="/modalbook.png" alt="" />
+                    <span>54+</span>&nbsp;&nbsp;
+                    Recommended by {recom.map((item, index) => (
+                        index === recom.length - 1 ? item.name + " " : item.name + ", "
+                    ))}
+                </> :
+                    <p className="text-center mb-0 opacity-75">Data not found</p>}
             </div>
-            <div style={{display:show?"block":"none"}}>
-                <ul className="list-unstyled ms-3">
+            <div style={{ display: show ? "block" : "none" }}>
+                {list.length > 0 ? <ul className="list-unstyled ms-3">
                     {list.map((item, index) => (
                         <li key={index}>
                             <Link className="text-dark" href={item.link}>{item.title}</Link>
@@ -31,6 +33,7 @@ export const RightTab = ({ list, recom, openDefault }) => {
 
                     ))}
                 </ul>
+                    : <p className="text-center my-2 opacity-75">Data not found</p>}
             </div>
         </div>
 

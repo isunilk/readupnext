@@ -13,7 +13,13 @@ const series_authors = new mongoose.Schema({
         h1:String,
         description:String,
         questions_answers:Object
-    }
+    },
+    wikipediaLink:String,
+    twitterHandle:String,
+    instagramHandle:String,
+    youtubeHandle:String,
+    tiktokHandle:String,
+    website:String,
 })
 
 

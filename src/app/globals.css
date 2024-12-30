@@ -104,6 +104,19 @@ body {
   background: var(--dark);
 }
 
+.socialMediaLink{
+  color:#000000a4
+}
+.contact,
+.about {
+  color:#48494e;
+}
+.contact h3,
+.about h2,
+.about h1{
+  color: var(--dark);
+}
+
 /* =======================list menu button ================ */
 .list_menu button.active{
   background: var(--basecolor);

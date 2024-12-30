@@ -17,6 +17,26 @@
     height: 25px;
 }
 
+.share>div{
+    padding: 1.5rem;
+    /* border-radius: 15px; */
+    background-color: var(--basecolor);
+    box-shadow: 0 0 70px 0px #04040430;
+}
+.share{
+    backdrop-filter: blur(10px);
+    z-index: 222;
+}
+.share>div>button{
+    width: 120px;
+    margin: auto;    
+    margin-top: 10px;
+    height: 35px;
+    display: block;
+    border: 1px solid var(--dark);
+}
+
+
 .top_div .action{
     border-bottom: 1px solid var(--basecolor);
     margin-bottom: -2rem;
@@ -39,6 +59,8 @@
     font-family: var(--font-urb);
     font-size: 25px;
 }
+
+
 
 
 /* =============menu css */

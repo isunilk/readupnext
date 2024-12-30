@@ -6,7 +6,11 @@
     font-family: var(--font-urb);
     background-color: var(--basecolor);
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    transition: .5s;
 }
+.personCard:hover{
+    transform: translateY(-5px) scale(1.05);
+}   
 .personCard img{
     border: 1px solid var(--dark);
     border-radius: 5px;
@@ -68,9 +72,15 @@
 
 
 /* =============== Book Card CSS=================== */
+.book_container{
+    /* height: 263px;
+    overflow: hidden; */
+}
 .book_container .main_img{
     width: 147px;
     height: 100%;
+    height: 262px;
+    max-height: 262px;
     box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.4);
     border: 1px solid var(--dark);
     border-radius: 0 5px 5px 0;
@@ -87,6 +97,22 @@
     width: 30px;
     height: 30px;
     border: 1px solid var(--dark);
+}
+
+.book_left .sort_desc{
+    height: 94px;
+    overflow-y: auto;
+
+}
+.book_left .sort_desc::-webkit-scrollbar{
+    width: 5px;
+}
+.book_left .sort_desc::-webkit-scrollbar-track{
+    background-color: beige;
+}
+.book_left .sort_desc::-webkit-scrollbar-thumb{
+    background-color: #000000c4;
+    border-radius: 5px;
 }
 
 .book_right p {

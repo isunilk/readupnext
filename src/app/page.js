@@ -13,12 +13,24 @@ import { home_author, home_people } from "./api/fetch-data/[action]/action";
 import dbConnect from "../../utils/connection";
 // import { BookDetail } from "@/component/Common/BookDetail";
 
+export const dynamic = 'force-static'
+
+export const metadata = {
+  title:"Discover Your Next Recommended Book | Readupnext.com",
+  description:"Explore and find your next good read - recommended books by influential people, handpicked by genre, or curated for specific interests.",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    images: '/opengraph_image.png',
+  },
+ 
+}
+
+
 export default async function Home() {
   await dbConnect()
   let data = await home_author()
-  // console.log(data.metadata)
-
-
   return (
     <>
       <Navhome />
@@ -148,7 +160,7 @@ export default async function Home() {
           <BookFilter />
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

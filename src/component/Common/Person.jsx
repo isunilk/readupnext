@@ -4,9 +4,9 @@ import style from "./common.module.css"
 export const Person = ({ people, page }) => {
 
   return (
-    <div className={`d-flex flex-column mx-2 my-3 justify-content-center align-items-center ${style.personCard}`}>
+    <Link href={"/people/" + people.slug} className={`d-flex flex-column mx-2 my-3 justify-content-center align-items-center text-dark text-decoration-none ${style.personCard}`}>
 
-      <img src={people.imageUrl300|| "/assets/blank_people.jpg"} alt="" width="100%"  />
+      <img src={people.imageUrl300|| "/assets/user.svg"} alt="" width="100%"  />
       <Link href={"/people/" + people.slug} className="my-2 text-decoration-none">{people.name}</Link>
       <div className='d-flex gap-2 mb-2'>
         {
@@ -20,17 +20,18 @@ export const Person = ({ people, page }) => {
         page ?
           <p className="mb-0">Total Books- <strong>{people.booksCount}</strong></p> : null
       }
-    </div>
+    </Link>
   )
 }
 
 export const AuthorCard = ({ people }) => {
+
   return (
-    <div className={`d-flex flex-column mx-2 my-3 justify-content-center align-items-center ${style.personCard}`}>
-      <img src={people.imageURL} alt="" width="100%" />
+    <Link href={"/author/" + people.slug} className={`d-flex flex-column mx-2 my-3 justify-content-center align-items-center text-decoration-none text-dark ${style.personCard}`}>
+      <img src={people.imageURL || "/assets/user.svg"} alt="" width="100%" />
       <Link href={"/author/" + people.slug} className="my-2 text-decoration-none">{people.name}</Link>
       <p className="mb-0">Total Books- <strong>{people.booksCount}</strong></p>
-    </div>
+    </Link>
   )
 }
 
